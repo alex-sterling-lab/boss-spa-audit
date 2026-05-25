@@ -6,268 +6,77 @@
   <title>Аудит рекламных кампаний — Boss Spa</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background: #f4f5f7;
-      color: #1a1a2e;
-    }
-
-    /* ─── HEADER ─── */
-    .header {
-      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 60%, #0f3460 100%);
-      color: #fff;
-      padding: 56px 48px 48px;
-      position: relative;
-      overflow: hidden;
-    }
-    .header::before {
-      content: '';
-      position: absolute;
-      top: -60px; right: -60px;
-      width: 280px; height: 280px;
-      border-radius: 50%;
-      background: rgba(212,175,55,0.08);
-    }
-    .header::after {
-      content: '';
-      position: absolute;
-      bottom: -80px; left: 200px;
-      width: 200px; height: 200px;
-      border-radius: 50%;
-      background: rgba(212,175,55,0.05);
-    }
-    .header-label {
-      font-size: 11px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: #d4af37;
-      margin-bottom: 12px;
-    }
-    .header h1 {
-      font-size: 36px;
-      font-weight: 700;
-      line-height: 1.2;
-      margin-bottom: 8px;
-    }
+    body { font-family: "Segoe UI", Arial, sans-serif; background: #f4f5f7; color: #1a1a2e; }
+    .header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 60%, #0f3460 100%); color: #fff; padding: 56px 48px 48px; position: relative; overflow: hidden; }
+    .header::before { content: ""; position: absolute; top: -60px; right: -60px; width: 280px; height: 280px; border-radius: 50%; background: rgba(212,175,55,0.08); }
+    .header-label { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #d4af37; margin-bottom: 12px; }
+    .header h1 { font-size: 36px; font-weight: 700; line-height: 1.2; margin-bottom: 8px; }
     .header h1 span { color: #d4af37; }
-    .header-sub {
-      font-size: 15px;
-      color: rgba(255,255,255,0.55);
-      margin-top: 6px;
-    }
-    .header-meta {
-      margin-top: 28px;
-      display: flex;
-      gap: 32px;
-      flex-wrap: wrap;
-    }
+    .header-sub { font-size: 15px; color: rgba(255,255,255,0.55); margin-top: 6px; }
+    .header-meta { margin-top: 28px; display: flex; gap: 32px; flex-wrap: wrap; }
     .meta-item { font-size: 13px; color: rgba(255,255,255,0.6); }
     .meta-item strong { color: #fff; display: block; font-size: 15px; }
-
-    /* ─── SUMMARY BAR ─── */
-    .summary-bar {
-      background: #fff;
-      border-bottom: 1px solid #e8eaed;
-      padding: 24px 48px;
-      display: flex;
-      gap: 40px;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-    .stat-pill {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .stat-num {
-      font-size: 28px;
-      font-weight: 700;
-    }
-    .stat-num.red    { color: #e74c3c; }
+    .summary-bar { background: #fff; border-bottom: 1px solid #e8eaed; padding: 24px 48px; display: flex; gap: 40px; flex-wrap: wrap; align-items: center; }
+    .stat-pill { display: flex; align-items: center; gap: 10px; }
+    .stat-num { font-size: 28px; font-weight: 700; }
+    .stat-num.red { color: #e74c3c; }
     .stat-num.orange { color: #f39c12; }
-    .stat-num.green  { color: #27ae60; }
+    .stat-num.green { color: #27ae60; }
     .stat-label { font-size: 12px; color: #888; line-height: 1.3; }
     .stat-label strong { display: block; color: #333; font-size: 14px; }
-
-    /* ─── CONTENT ─── */
-    .content { max-width: 960px; margin: 0 auto; padding: 40px 24px; }
-
-    /* ─── SECTION ─── */
+    .content { max-width: 980px; margin: 0 auto; padding: 40px 24px; }
     .section { margin-bottom: 36px; }
-    .section-title {
-      font-size: 13px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: #888;
-      margin-bottom: 16px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .section-title::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: #e8eaed;
-    }
-
-    /* ─── CARD ─── */
-    .card {
-      background: #fff;
-      border-radius: 12px;
-      border: 1px solid #e8eaed;
-      padding: 24px 28px;
-      margin-bottom: 14px;
-      transition: box-shadow 0.15s;
-    }
-    .card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.07); }
-
-    .card-header {
-      display: flex;
-      align-items: flex-start;
-      gap: 16px;
-    }
-    .card-icon {
-      width: 40px; height: 40px;
-      border-radius: 10px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 18px;
-      flex-shrink: 0;
-    }
-    .icon-red    { background: #fdecea; }
+    .section-title { font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: #888; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+    .section-title::after { content: ""; flex: 1; height: 1px; background: #e8eaed; }
+    .card { background: #fff; border-radius: 12px; border: 1px solid #e8eaed; padding: 24px 28px; margin-bottom: 14px; }
+    .card-header { display: flex; align-items: flex-start; gap: 16px; }
+    .card-icon { width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+    .icon-red { background: #fdecea; }
     .icon-orange { background: #fef3e2; }
-    .icon-blue   { background: #e8f0fe; }
-    .icon-purple { background: #f3e8fd; }
-
-    .card-body { flex: 1; }
-    .card-title {
-      font-size: 16px;
-      font-weight: 600;
-      color: #1a1a2e;
-      margin-bottom: 4px;
-    }
-    .card-desc {
-      font-size: 14px;
-      color: #555;
-      line-height: 1.6;
-    }
-
-    .badge {
-      display: inline-block;
-      font-size: 11px;
-      font-weight: 600;
-      padding: 3px 9px;
-      border-radius: 20px;
-      margin-left: 8px;
-      vertical-align: middle;
-    }
-    .badge-crit  { background: #fdecea; color: #c0392b; }
-    .badge-warn  { background: #fef3e2; color: #d68910; }
-    .badge-info  { background: #e8f0fe; color: #1a73e8; }
-
-    /* ─── FIX BOX ─── */
-    .fix-box {
-      margin-top: 14px;
-      background: #f8fffe;
-      border: 1px solid #c8ede8;
-      border-radius: 8px;
-      padding: 14px 18px;
-    }
-    .fix-label {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      color: #1e8c7a;
-      text-transform: uppercase;
-      margin-bottom: 8px;
-    }
-    .fix-list {
-      list-style: none;
-      padding: 0;
-    }
-    .fix-list li {
-      font-size: 13.5px;
-      color: #333;
-      padding: 4px 0;
-      padding-left: 18px;
-      position: relative;
-      line-height: 1.5;
-    }
-    .fix-list li::before {
-      content: '→';
-      position: absolute;
-      left: 0;
-      color: #1e8c7a;
-      font-weight: 700;
-    }
-
-    /* ─── PRIORITY TABLE ─── */
-    .priority-table {
-      background: #fff;
-      border-radius: 12px;
-      border: 1px solid #e8eaed;
-      overflow: hidden;
-      margin-bottom: 14px;
-    }
-    .priority-table table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 14px;
-    }
-    .priority-table th {
-      background: #f8f9fa;
-      text-align: left;
-      padding: 12px 20px;
-      font-size: 12px;
-      font-weight: 600;
-      color: #888;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-    .priority-table td {
-      padding: 13px 20px;
-      border-top: 1px solid #f0f0f0;
-      color: #333;
-    }
+    .icon-blue { background: #e8f0fe; }
+    .card-body { flex: 1; min-width: 0; }
+    .card-title { font-size: 16px; font-weight: 600; color: #1a1a2e; margin-bottom: 4px; }
+    .card-desc { font-size: 14px; color: #555; line-height: 1.6; }
+    .badge { display: inline-block; font-size: 11px; font-weight: 600; padding: 3px 9px; border-radius: 20px; margin-left: 8px; vertical-align: middle; }
+    .badge-crit { background: #fdecea; color: #c0392b; }
+    .badge-warn { background: #fef3e2; color: #d68910; }
+    .badge-info { background: #e8f0fe; color: #1a73e8; }
+    .screenshot-wrap { margin-top: 16px; border: 1px solid #e8eaed; border-radius: 8px; overflow: hidden; background: #f8f9fa; }
+    .screenshot-label { padding: 8px 14px; font-size: 11px; font-weight: 600; letter-spacing: 0.5px; color: #888; background: #f8f9fa; border-bottom: 1px solid #e8eaed; text-transform: uppercase; }
+    .screenshot-wrap img { display: block; width: 100%; height: auto; max-height: 420px; object-fit: contain; background: #fff; }
+    .screenshots-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+    @media (max-width: 640px) { .screenshots-row { grid-template-columns: 1fr; } }
+    .fix-box { margin-top: 14px; background: #f8fffe; border: 1px solid #c8ede8; border-radius: 8px; padding: 14px 18px; }
+    .fix-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; color: #1e8c7a; text-transform: uppercase; margin-bottom: 8px; }
+    .fix-list { list-style: none; padding: 0; }
+    .fix-list li { font-size: 13.5px; color: #333; padding: 4px 0; padding-left: 18px; position: relative; line-height: 1.5; }
+    .fix-list li::before { content: "\2192"; position: absolute; left: 0; color: #1e8c7a; font-weight: 700; }
+    .priority-table { background: #fff; border-radius: 12px; border: 1px solid #e8eaed; overflow: hidden; margin-bottom: 14px; }
+    .priority-table table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    .priority-table th { background: #f8f9fa; text-align: left; padding: 12px 20px; font-size: 12px; font-weight: 600; color: #888; text-transform: uppercase; letter-spacing: 0.5px; }
+    .priority-table td { padding: 13px 20px; border-top: 1px solid #f0f0f0; color: #333; }
     .priority-table tr:hover td { background: #fafafa; }
-    .dot {
-      display: inline-block;
-      width: 8px; height: 8px;
-      border-radius: 50%;
-      margin-right: 6px;
-    }
-    .dot-red    { background: #e74c3c; }
+    .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; }
+    .dot-red { background: #e74c3c; }
     .dot-orange { background: #f39c12; }
-    .dot-green  { background: #27ae60; }
-
-    /* ─── FOOTER ─── */
-    .footer {
-      background: #1a1a2e;
-      color: rgba(255,255,255,0.4);
-      text-align: center;
-      padding: 28px;
-      font-size: 13px;
-      margin-top: 60px;
-    }
+    .dot-green { background: #27ae60; }
+    .footer { background: #1a1a2e; color: rgba(255,255,255,0.4); text-align: center; padding: 28px; font-size: 13px; margin-top: 60px; }
     .footer a { color: #d4af37; text-decoration: none; }
   </style>
 </head>
 <body>
 
-<!-- HEADER -->
 <div class="header">
   <div class="header-label">Аудит рекламных кампаний</div>
   <h1>Boss <span>Spa</span></h1>
-  <div class="header-sub">theboss-spa.com · Google Ads + Яндекс.Директ · Business Profile</div>
+  <div class="header-sub">theboss-spa.com · Google Ads + Business Profile</div>
   <div class="header-meta">
     <div class="meta-item"><strong>Май 2026</strong>Дата аудита</div>
-    <div class="meta-item"><strong>3 направления</strong>Google Ads, Директ, GBP</div>
+    <div class="meta-item"><strong>2 направления</strong>Google Ads, Business Profile</div>
     <div class="meta-item"><strong>17 замечаний</strong>критических и рекомендуемых</div>
   </div>
 </div>
 
-<!-- SUMMARY BAR -->
 <div class="summary-bar">
   <div class="stat-pill">
     <div class="stat-num red">8</div>
@@ -283,7 +92,6 @@
   </div>
 </div>
 
-<!-- MAIN CONTENT -->
 <div class="content">
 
   <!-- TARGETING -->
@@ -298,13 +106,17 @@
             <span class="badge badge-crit">Критично</span>
           </div>
           <div class="card-desc">
-            Текущие настройки геотаргетинга захватывают пользователей, которые <em>проявляют интерес</em> к локации, а не физически находятся в Дубае. Из-за этого значительная часть бюджета расходуется на нерелевантных пользователей — особенно из регионов с низкой конверсией.
+            Выбран режим <strong>«Присутствие или интерес»</strong> — реклама показывается всем, кто когда-либо интересовался Дубаем, включая пользователей из Индии, Пакистана, Бангладеш. Бюджет уходит на аудиторию, которая физически не может стать клиентом.
+          </div>
+          <div class="screenshot-wrap">
+            <div class="screenshot-label">Скриншот — настройки геотаргетинга</div>
+            <img src="img/image1.png" alt="Геотаргетинг: Присутствие или интерес" />
           </div>
           <div class="fix-box">
             <div class="fix-label">Как исправить</div>
             <ul class="fix-list">
-              <li>Изменить настройку с «Присутствие или интерес» на «Присутствие» (фактическое местонахождение)</li>
-              <li>Ограничить таргетинг Dubai + ближайшие эмираты</li>
+              <li>Изменить с «Присутствие или интерес» на <strong>«Присутствие»</strong></li>
+              <li>Ограничить таргетинг Dubai + ближайшие эмираты (Abu Dhabi, Sharjah)</li>
               <li>Добавить корректировки ставок по районам города</li>
             </ul>
           </div>
@@ -316,86 +128,21 @@
       <div class="card-header">
         <div class="card-icon icon-orange">🌐</div>
         <div class="card-body">
-          <div class="card-title">Ограничение по языку обрезает аудиторию
+          <div class="card-title">Ограничение по языку обрезает платёжеспособную аудиторию
             <span class="badge badge-warn">Важно</span>
           </div>
           <div class="card-desc">
-            Таргетинг настроен только на один язык интерфейса, из-за чего теряется часть платёжеспособной аудитории — туристы и экспаты, у которых устройства настроены на другие языки.
+            Настроен только английский язык интерфейса. Google сам рекомендует добавить арабский — без него часть жителей и туристов ОАЭ не увидит рекламу.
+          </div>
+          <div class="screenshot-wrap">
+            <div class="screenshot-label">Скриншот — языковой таргетинг</div>
+            <img src="img/image2.png" alt="Языковой таргетинг: только английский" />
           </div>
           <div class="fix-box">
             <div class="fix-label">Как исправить</div>
             <ul class="fix-list">
-              <li>Добавить английский, арабский и русский языки в настройки кампании</li>
-              <li>Либо убрать ограничение по языку полностью</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- STRUCTURE -->
-  <div class="section">
-    <div class="section-title">🏗️ Структура кампаний</div>
-
-    <div class="card">
-      <div class="card-header">
-        <div class="card-icon icon-red">📂</div>
-        <div class="card-body">
-          <div class="card-title">Слишком мало ключевых фраз — 7–9 на группу
-            <span class="badge badge-crit">Критично</span>
-          </div>
-          <div class="card-desc">
-            В каждой группе объявлений всего 7–9 ключевых фраз. Это критически ограничивает охват: система не может обучиться на достаточном объёме данных, а потенциальные клиенты, ищущие услуги другими словами, просто не видят рекламу.
-          </div>
-          <div class="fix-box">
-            <div class="fix-label">Как исправить</div>
-            <ul class="fix-list">
-              <li>Расширить семантику минимум до 30–50 фраз на группу</li>
-              <li>Добавить варианты: «massages Dubai», «spa near me», «moroccan bath Dubai» и т.д.</li>
-              <li>Разбить по услугам: отдельные группы на Moroccan Bath, Swedish massage, Hot Stone и пр.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-header">
-        <div class="card-icon icon-red">📋</div>
-        <div class="card-body">
-          <div class="card-title">Только 2 группы объявлений — по типу соответствия
-            <span class="badge badge-crit">Критично</span>
-          </div>
-          <div class="card-desc">
-            Структура построена по принципу «широкое / точное соответствие» — без разбивки по услугам или намерению пользователя. Такая структура не позволяет управлять ставками на уровне услуги и показывать релевантные объявления.
-          </div>
-          <div class="fix-box">
-            <div class="fix-label">Как исправить</div>
-            <ul class="fix-list">
-              <li>Создать отдельные группы по ключевым услугам (Moroccan Bath, массаж, пакеты, подарочные сертификаты)</li>
-              <li>Отдельные группы под брендовые запросы</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-header">
-        <div class="card-icon icon-orange">📝</div>
-        <div class="card-body">
-          <div class="card-title">Только одно объявление в каждой группе
-            <span class="badge badge-warn">Важно</span>
-          </div>
-          <div class="card-desc">
-            Google рекомендует 3–5 объявлений на группу для A/B-тестирования текстов. Одно объявление — нет данных для оптимизации, нет возможности улучшить CTR.
-          </div>
-          <div class="fix-box">
-            <div class="fix-label">Как исправить</div>
-            <ul class="fix-list">
-              <li>Добавить минимум 2–3 адаптивных поисковых объявления (RSA) в каждую группу</li>
-              <li>Тестировать разные УТП: цена, эксперты, первый визит со скидкой</li>
+              <li>Добавить арабский (сам Google рекомендует) и русский языки</li>
+              <li>Либо убрать ограничение по языку совсем</li>
             </ul>
           </div>
         </div>
@@ -411,17 +158,21 @@
       <div class="card-header">
         <div class="card-icon icon-red">🔗</div>
         <div class="card-body">
-          <div class="card-title">Отсутствуют UTM-метки
+          <div class="card-title">Отсутствуют UTM-метки — нет понимания откуда клиенты
             <span class="badge badge-crit">Критично</span>
           </div>
           <div class="card-desc">
-            Ни в одном объявлении нет UTM-параметров. В результате в Google Analytics/Яндекс.Метрике невозможно отследить, какие кампании, группы и ключевые слова приводят клиентов. Деньги тратятся «вслепую».
+            Шаблон отслеживания пустой. В аналитике невозможно отследить, какие кампании, группы и ключевые слова приводят реальных клиентов. Деньги тратятся «вслепую».
+          </div>
+          <div class="screenshot-wrap">
+            <div class="screenshot-label">Скриншот — пустой шаблон отслеживания URL</div>
+            <img src="img/image3.png" alt="Пустой шаблон отслеживания" />
           </div>
           <div class="fix-box">
             <div class="fix-label">Как исправить</div>
             <ul class="fix-list">
-              <li>Добавить шаблон отслеживания на уровне аккаунта: <code>?utm_source=google&utm_medium=cpc&utm_campaign={campaignid}&utm_content={adgroupid}&utm_term={keyword}</code></li>
-              <li>Проверить передачу данных в аналитику</li>
+              <li>Добавить шаблон на уровне аккаунта: ?utm_source=google&amp;utm_medium=cpc&amp;utm_campaign={campaignid}&amp;utm_term={keyword}</li>
+              <li>Проверить передачу данных в Google Analytics</li>
             </ul>
           </div>
         </div>
@@ -432,18 +183,21 @@
       <div class="card-header">
         <div class="card-icon icon-red">🎯</div>
         <div class="card-body">
-          <div class="card-title">Все цели помечены как «Основные» — без ценности конверсий
+          <div class="card-title">Все конверсии «Основные» — без ценности
             <span class="badge badge-crit">Критично</span>
           </div>
           <div class="card-desc">
-            Когда все действия (звонок, форма, WhatsApp, карта) имеют одинаковый статус «Основная», алгоритм не понимает, что важнее. Ценность конверсий не задана — умные стратегии ставок работают неэффективно.
+            Звонок, WhatsApp, маршрут, посещение сайта — всё в статусе «Основные», ценность у всех <strong>«Нет»</strong>. Алгоритм не понимает, что важнее, и оптимизируется неэффективно. Зафиксировано 243 конверсии — но непонятно, какие из них реальные заявки.
+          </div>
+          <div class="screenshot-wrap">
+            <div class="screenshot-label">Скриншот — список конверсий аккаунта</div>
+            <img src="img/image10.png" alt="Все конверсии помечены как Основные без ценности" />
           </div>
           <div class="fix-box">
             <div class="fix-label">Как исправить</div>
             <ul class="fix-list">
-              <li>Выделить главные цели: звонок и WhatsApp — «Основные»</li>
-              <li>Остальные перевести в «Вспомогательные» или «Для информации»</li>
-              <li>Назначить ценность: звонок = 500 AED, WhatsApp = 300 AED (примерно)</li>
+              <li>Клик WhatsApp и звонок — оставить «Основные», задать ценность (~500 AED и ~300 AED)</li>
+              <li>Маршрут, посещение сайта, сообщения — перевести в «Вспомогательные»</li>
             </ul>
           </div>
         </div>
@@ -454,17 +208,115 @@
       <div class="card-header">
         <div class="card-icon icon-orange">🗺️</div>
         <div class="card-body">
-          <div class="card-title">Слишком много целей для кампании на карты
+          <div class="card-title">Кампания Search+Maps перегружена целями
             <span class="badge badge-warn">Важно</span>
           </div>
           <div class="card-desc">
-            Кампания в Google Maps перегружена целями, которые к ней неприменимы. Это «размывает» обучение алгоритма и ухудшает результат.
+            В кампании на карты подключено 5 целей конверсии, большинство из которых к картам неприменимы. Это «размывает» обучение алгоритма.
+          </div>
+          <div class="screenshot-wrap">
+            <div class="screenshot-label">Скриншот — цели конверсий кампании Search+Maps</div>
+            <img src="img/image11.png" alt="Слишком много целей для кампании на карты" />
           </div>
           <div class="fix-box">
             <div class="fix-label">Как исправить</div>
             <ul class="fix-list">
-              <li>Для кампании на карты оставить только: «Маршрут», «Клик по телефону»</li>
-              <li>Убрать цели, связанные с сайтом (форма, корзина и пр.)</li>
+              <li>Для кампании на карты оставить только: «Прокладка маршрута» и «Потенциальные клиенты по телефону»</li>
+              <li>Убрать «Исходящие клики», «Лиды из сообщений», «Квалифицированные лиды»</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STRUCTURE -->
+  <div class="section">
+    <div class="section-title">🏗️ Структура кампаний</div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon icon-red">📂</div>
+        <div class="card-body">
+          <div class="card-title">Структура по типу соответствия, а не по услугам
+            <span class="badge badge-crit">Критично</span>
+          </div>
+          <div class="card-desc">
+            Все группы объявлений: Massage|Exact, Massage|Phrase, Spa|Exact, Spa|Phrase — только по типу соответствия. Нет разбивки по реальным услугам (Moroccan Bath, Deep Tissue, Hot Stone и т.д.). Управлять ставками по услугам и показывать релевантные объявления невозможно.
+          </div>
+          <div class="screenshot-wrap">
+            <div class="screenshot-label">Скриншот — группы объявлений кампании</div>
+            <img src="img/image5.png" alt="Группы объявлений по типу соответствия" />
+          </div>
+          <div class="fix-box">
+            <div class="fix-label">Как исправить</div>
+            <ul class="fix-list">
+              <li>Создать отдельные группы по услугам: Moroccan Bath, Swedish/Classic Massage, Deep Tissue, Packages, Gift Cards</li>
+              <li>Брендовые запросы вынести в отдельную группу</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon icon-red">📋</div>
+        <div class="card-body">
+          <div class="card-title">Слишком мало ключевых фраз — 7–9 на группу
+            <span class="badge badge-crit">Критично</span>
+          </div>
+          <div class="card-desc">
+            В группе Massage|Exact всего 9 фраз, в Spa|Exact — 7. Все только в точном соответствии. Система не может обучиться на таком объёме, а пользователи, ищущие услуги другими словами, рекламу не видят.
+          </div>
+          <div class="screenshots-row">
+            <div class="screenshot-wrap" style="margin-top:0">
+              <div class="screenshot-label">Massage|Exact — 9 фраз</div>
+              <img src="img/image6.png" alt="Ключевые слова Massage Exact" />
+            </div>
+            <div class="screenshot-wrap" style="margin-top:0">
+              <div class="screenshot-label">Spa|Exact — 7 фраз</div>
+              <img src="img/image7.png" alt="Ключевые слова Spa Exact" />
+            </div>
+          </div>
+          <div class="fix-box">
+            <div class="fix-label">Как исправить</div>
+            <ul class="fix-list">
+              <li>Расширить семантику до 30–50 фраз на группу</li>
+              <li>Добавить фразовое соответствие для менее очевидных запросов</li>
+              <li>Проработать запросы: «spa near me», «moroccan hammam dubai», «relaxing massage dubai» и т.д.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon icon-orange">⚠️</div>
+        <div class="card-body">
+          <div class="card-title">Объявления получили ограничения — требуют апелляции
+            <span class="badge badge-warn">Важно</span>
+          </div>
+          <div class="card-desc">
+            Все объявления имеют статус <strong>«Допущено (с ограничениями)»</strong>. Google флагует тексты как потенциально связанные с «услугами организации свиданий». Также у некоторых объявлений ошибка «Целевая страница недоступна».
+          </div>
+          <div class="screenshots-row">
+            <div class="screenshot-wrap" style="margin-top:0">
+              <div class="screenshot-label">Статус объявления</div>
+              <img src="img/image4.png" alt="Статус: Допущено с ограничениями" />
+            </div>
+            <div class="screenshot-wrap" style="margin-top:0">
+              <div class="screenshot-label">Список объявлений с ограничениями</div>
+              <img src="img/image8.png" alt="Все объявления с ограничениями" />
+            </div>
+          </div>
+          <div class="fix-box">
+            <div class="fix-label">Как исправить</div>
+            <ul class="fix-list">
+              <li>Подать апелляцию по каждому объявлению через кнопку «Подать апелляцию»</li>
+              <li>Скорректировать тексты — убрать формулировки, которые могут восприниматься двусмысленно</li>
+              <li>Проверить доступность целевых страниц /massage/dubai и /spa/dubai</li>
             </ul>
           </div>
         </div>
@@ -480,18 +332,23 @@
       <div class="card-header">
         <div class="card-icon icon-orange">🖼️</div>
         <div class="card-body">
-          <div class="card-title">Нет логотипа + 5 быстрых ссылок заполнены не до конца
+          <div class="card-title">Нет логотипа + быстрые ссылки без описаний
             <span class="badge badge-warn">Важно</span>
           </div>
           <div class="card-desc">
-            Логотип бренда не загружен в аккаунт — объявления выглядят менее доверительно. Быстрые ссылки созданы, но без описаний и картинок, что снижает их CTR и визуальную привлекательность.
+            Логотип компании не загружен. Четыре из пяти быстрых ссылок (Signature SPA Programs, Classic Techniques, Classic Massages, Offers &amp; Packages) не имеют описаний — пользователь не понимает, куда переходит.
+          </div>
+          <div class="screenshot-wrap">
+            <div class="screenshot-label">Скриншот — логотип и быстрые ссылки</div>
+            <img src="img/image9.png" alt="Нет логотипа, быстрые ссылки без описаний" />
           </div>
           <div class="fix-box">
             <div class="fix-label">Как исправить</div>
             <ul class="fix-list">
-              <li>Загрузить логотип Boss Spa в Assets</li>
-              <li>Дополнить каждую быструю ссылку: описание (2 строки) + изображение</li>
-              <li>Примеры: «Moroccan Bath — от 399 AED», «Массаж вдвоём — специальное предложение»</li>
+              <li>Загрузить логотип Boss Spa в раздел Assets</li>
+              <li>Дописать описание каждой быстрой ссылки (2 строки по 35 символов)</li>
+              <li>Пример: «Signature SPA Programs — Полное расслабление от 399 AED»</li>
+              <li>Добавить 6-ю рекомендованную быструю ссылку</li>
             </ul>
           </div>
         </div>
@@ -502,17 +359,27 @@
       <div class="card-header">
         <div class="card-icon icon-blue">⚙️</div>
         <div class="card-body">
-          <div class="card-title">На уровне аккаунта не задан тип ресурса и нет исключений
+          <div class="card-title">Тип ресурса не выбран, исключения не настроены
             <span class="badge badge-info">Рекомендация</span>
           </div>
           <div class="card-desc">
-            Тип ресурса помогает Google лучше понимать бизнес и показывать релевантные автоматические расширения. Отсутствие исключений на уровне аккаунта повышает риск нежелательных показов.
+            На уровне аккаунта не задан тип инвентаря. Исключения деликатного контента, тем и ключевых слов — все пустые. Это повышает риск показов рядом с нежелательным контентом.
+          </div>
+          <div class="screenshots-row">
+            <div class="screenshot-wrap" style="margin-top:0">
+              <div class="screenshot-label">Тип ресурса — не выбран</div>
+              <img src="img/image12.png" alt="Тип ресурса не выбран" />
+            </div>
+            <div class="screenshot-wrap" style="margin-top:0">
+              <div class="screenshot-label">Исключения — все пустые</div>
+              <img src="img/image13.png" alt="Исключения не настроены" />
+            </div>
           </div>
           <div class="fix-box">
             <div class="fix-label">Как исправить</div>
             <ul class="fix-list">
-              <li>В настройках аккаунта указать: «Услуги / Красота и уход»</li>
-              <li>Добавить исключения по контенту (несовместимые категории)</li>
+              <li>Выбрать «Стандартный инвентарь» (рекомендуется Google)</li>
+              <li>Добавить исключения деликатного контента, не подходящего для бренда</li>
             </ul>
           </div>
         </div>
@@ -528,19 +395,22 @@
       <div class="card-header">
         <div class="card-icon icon-red">⭐</div>
         <div class="card-body">
-          <div class="card-title">Нет ответов на отзывы
+          <div class="card-title">Нет ответов на отзывы — даже положительные
             <span class="badge badge-crit">Критично</span>
           </div>
           <div class="card-desc">
-            Бизнес не отвечает на отзывы — ни на положительные, ни на отрицательные. Это снижает доверие: потенциальный клиент видит «безжизненный» профиль и уходит к конкурентам. Google также учитывает активность профиля при ранжировании в Maps.
+            Клиенты пишут тёплые отзывы («Обслуживание на высшем уровне, смело рекомендую»), но бизнес не отвечает. Потенциальный клиент видит «безжизненный» профиль. Google учитывает активность при ранжировании в Maps.
+          </div>
+          <div class="screenshot-wrap">
+            <div class="screenshot-label">Скриншот — отзывы без ответов</div>
+            <img src="img/image14.png" alt="Положительные отзывы без ответов" />
           </div>
           <div class="fix-box">
             <div class="fix-label">Как исправить</div>
             <ul class="fix-list">
               <li>Ответить на все существующие отзывы в течение недели</li>
-              <li>Положительные: «Спасибо, ждём вас снова!» + имя гостя</li>
-              <li>Отрицательные: разобрать ситуацию, предложить решение</li>
-              <li>Ввести правило: ответ в течение 24 часов</li>
+              <li>Положительные: «Спасибо, [имя]! Ждём вас снова»</li>
+              <li>Ввести правило: ответ на новый отзыв в течение 24 часов</li>
             </ul>
           </div>
         </div>
@@ -551,19 +421,23 @@
       <div class="card-header">
         <div class="card-icon icon-orange">📋</div>
         <div class="card-body">
-          <div class="card-title">Профиль заполнен не полностью
+          <div class="card-title">Профиль заполнен не полностью — атрибуты пустые
             <span class="badge badge-warn">Важно</span>
           </div>
           <div class="card-desc">
-            Неполный профиль занижает позицию в локальной выдаче и Maps. Пользователи не видят всю нужную информацию и уходят.
+            Все важные атрибуты профиля (Amenities, Accessibility, Offerings, Parking, Payments) не заполнены. Неполный профиль = ниже позиция в локальной выдаче, меньше доверия от пользователей.
+          </div>
+          <div class="screenshot-wrap">
+            <div class="screenshot-label">Скриншот — незаполненные атрибуты профиля</div>
+            <img src="img/image15.png" alt="Атрибуты профиля не заполнены" />
           </div>
           <div class="fix-box">
             <div class="fix-label">Как исправить</div>
             <ul class="fix-list">
-              <li>Заполнить все категории услуг с ценами</li>
-              <li>Добавить описание бизнеса (750 символов) с ключевыми словами</li>
-              <li>Загрузить 20+ фото (интерьер, персонал, процедуры)</li>
-              <li>Указать часы работы, ссылку на бронирование, атрибуты (Wi-Fi, парковка и пр.)</li>
+              <li>Заполнить все атрибуты: способы оплаты, парковка, доступность, предложения</li>
+              <li>Добавить описание бизнеса (до 750 символов) с ключевыми словами</li>
+              <li>Загрузить 20+ фото: интерьер, кабинеты, персонал, процедуры</li>
+              <li>Добавить ссылку на онлайн-запись</li>
             </ul>
           </div>
         </div>
@@ -574,17 +448,21 @@
       <div class="card-header">
         <div class="card-icon icon-blue">📰</div>
         <div class="card-body">
-          <div class="card-title">Нет постов в профиле
+          <div class="card-title">Ни одного поста — раздел пустой
             <span class="badge badge-info">Рекомендация</span>
           </div>
           <div class="card-desc">
-            Посты в GBP отображаются прямо в поисковой выдаче и на карте — это бесплатный инструмент для продвижения акций, новинок и событий.
+            Посты в GBP отображаются в поисковой выдаче прямо под карточкой — это бесплатный способ рассказать об акциях. Раздел полностью пустой.
+          </div>
+          <div class="screenshot-wrap">
+            <div class="screenshot-label">Скриншот — раздел постов пустой</div>
+            <img src="img/image16.png" alt="Нет постов в Google Business Profile" />
           </div>
           <div class="fix-box">
             <div class="fix-label">Как исправить</div>
             <ul class="fix-list">
-              <li>Публиковать 1–2 поста в неделю: акции, сезонные предложения, фото-контент</li>
-              <li>Использовать тип «Предложение» для скидок (первый визит)</li>
+              <li>Публиковать 1–2 поста в неделю: акции, сезонные предложения, фото</li>
+              <li>Использовать тип «Предложение» для скидки на первый визит (425 вместо 525 AED)</li>
             </ul>
           </div>
         </div>
@@ -595,7 +473,6 @@
   <!-- PRIORITY TABLE -->
   <div class="section">
     <div class="section-title">🗓️ Приоритеты по исправлению</div>
-
     <div class="priority-table">
       <table>
         <thead>
@@ -607,78 +484,19 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td><span class="dot dot-red"></span>Критично</td>
-            <td>Исправить геотаргетинг → «Присутствие»</td>
-            <td>Google Ads</td>
-            <td>15 мин</td>
-          </tr>
-          <tr>
-            <td><span class="dot dot-red"></span>Критично</td>
-            <td>Добавить UTM-метки на уровне аккаунта</td>
-            <td>Google Ads</td>
-            <td>30 мин</td>
-          </tr>
-          <tr>
-            <td><span class="dot dot-red"></span>Критично</td>
-            <td>Настроить приоритеты и ценность конверсий</td>
-            <td>Google Ads</td>
-            <td>1 час</td>
-          </tr>
-          <tr>
-            <td><span class="dot dot-red"></span>Критично</td>
-            <td>Ответить на все отзывы в GBP</td>
-            <td>Business Profile</td>
-            <td>1–2 часа</td>
-          </tr>
-          <tr>
-            <td><span class="dot dot-red"></span>Критично</td>
-            <td>Расширить семантику (30–50 фраз/группу)</td>
-            <td>Google Ads</td>
-            <td>2–3 часа</td>
-          </tr>
-          <tr>
-            <td><span class="dot dot-orange"></span>Важно</td>
-            <td>Добавить языки таргетинга</td>
-            <td>Google Ads</td>
-            <td>10 мин</td>
-          </tr>
-          <tr>
-            <td><span class="dot dot-orange"></span>Важно</td>
-            <td>Дозаполнить быстрые ссылки + загрузить логотип</td>
-            <td>Google Ads</td>
-            <td>1 час</td>
-          </tr>
-          <tr>
-            <td><span class="dot dot-orange"></span>Важно</td>
-            <td>Пересмотреть структуру групп по услугам</td>
-            <td>Google Ads</td>
-            <td>3–4 часа</td>
-          </tr>
-          <tr>
-            <td><span class="dot dot-orange"></span>Важно</td>
-            <td>Добавить 2–3 объявления в каждую группу</td>
-            <td>Google Ads</td>
-            <td>2 часа</td>
-          </tr>
-          <tr>
-            <td><span class="dot dot-orange"></span>Важно</td>
-            <td>Заполнить профиль GBP полностью</td>
-            <td>Business Profile</td>
-            <td>2–3 часа</td>
-          </tr>
-          <tr>
-            <td><span class="dot dot-green"></span>Рекомендация</td>
-            <td>Регулярные посты в GBP (1–2/нед)</td>
-            <td>Business Profile</td>
-            <td>Ongoing</td>
-          </tr>
-          <tr>
-            <td><span class="dot dot-green"></span>Рекомендация</td>
-            <td>Задать тип ресурса и исключения в аккаунте</td>
-            <td>Google Ads</td>
-            <td>30 мин</td>
-          </tr>
+          <tr><td><span class="dot dot-red"></span>Критично</td><td>Исправить геотаргетинг → «Присутствие»</td><td>Google Ads</td><td>15 мин</td></tr>
+          <tr><td><span class="dot dot-red"></span>Критично</td><td>Добавить UTM-метки на уровне аккаунта</td><td>Google Ads</td><td>30 мин</td></tr>
+          <tr><td><span class="dot dot-red"></span>Критично</td><td>Настроить приоритеты и ценность конверсий</td><td>Google Ads</td><td>1 час</td></tr>
+          <tr><td><span class="dot dot-red"></span>Критично</td><td>Подать апелляцию по всем объявлениям</td><td>Google Ads</td><td>30 мин</td></tr>
+          <tr><td><span class="dot dot-red"></span>Критично</td><td>Ответить на все отзывы в GBP</td><td>Business Profile</td><td>1–2 часа</td></tr>
+          <tr><td><span class="dot dot-red"></span>Критично</td><td>Расширить семантику (30–50 фраз/группу)</td><td>Google Ads</td><td>2–3 часа</td></tr>
+          <tr><td><span class="dot dot-orange"></span>Важно</td><td>Добавить языки таргетинга (арабский, русский)</td><td>Google Ads</td><td>10 мин</td></tr>
+          <tr><td><span class="dot dot-orange"></span>Важно</td><td>Загрузить логотип + дозаполнить быстрые ссылки</td><td>Google Ads</td><td>1 час</td></tr>
+          <tr><td><span class="dot dot-orange"></span>Важно</td><td>Убрать лишние цели из кампании Search+Maps</td><td>Google Ads</td><td>20 мин</td></tr>
+          <tr><td><span class="dot dot-orange"></span>Важно</td><td>Пересмотреть структуру групп по услугам</td><td>Google Ads</td><td>3–4 часа</td></tr>
+          <tr><td><span class="dot dot-orange"></span>Важно</td><td>Заполнить атрибуты профиля GBP полностью</td><td>Business Profile</td><td>2–3 часа</td></tr>
+          <tr><td><span class="dot dot-green"></span>Рекомендация</td><td>Выбрать тип инвентаря + настроить исключения</td><td>Google Ads</td><td>30 мин</td></tr>
+          <tr><td><span class="dot dot-green"></span>Рекомендация</td><td>Регулярные посты в GBP (1–2 в неделю)</td><td>Business Profile</td><td>Ongoing</td></tr>
         </tbody>
       </table>
     </div>
@@ -686,7 +504,6 @@
 
 </div>
 
-<!-- FOOTER -->
 <div class="footer">
   Аудит подготовлен для Boss Spa · <a href="https://theboss-spa.com">theboss-spa.com</a> · Май 2026
 </div>
